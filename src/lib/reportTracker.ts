@@ -11,7 +11,6 @@ export const reportTracker = <T>(data: T, type?: reportType) => {
     ua: _window.navigator.userAgent,
     type,
     appId: _window.Monitor._appId_, 
-    userId: _window.Monitor._userId_ || "",
   };
   if (navigator.sendBeacon) {
     // 支持sendBeacon的浏览器
@@ -28,5 +27,4 @@ export const reportTracker = <T>(data: T, type?: reportType) => {
       params
     )}`;
   }
-  console.log(params, "reportTracker params");
 };
