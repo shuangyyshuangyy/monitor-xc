@@ -76,19 +76,7 @@ class Monitor {
         this.currentPage = currentPage;
         let stayTime = this.calcStayTime() / 1000;
         if (stayTime > validPageStayTime) {
-          this.pageStartTime = this.getTime();
-          if (_window.Monitor._userId_) {
-            // 上报UV数据
-            reportTracker(
-              {
-                stayTime,
-                currentPage,
-                prePage,
-                userId: _window.Monitor._userId_,
-              },
-              "UV"
-            );
-          } else {
+          this.pageStartTime = this.getTime();         
             // 上报PV数据
             reportTracker(
               {
@@ -97,8 +85,7 @@ class Monitor {
                 prePage
               },
               "PV"
-            );
-          }
+            );     
         }
       });
     });
