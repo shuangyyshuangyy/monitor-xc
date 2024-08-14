@@ -1,7 +1,6 @@
 import { Options } from "../types/index";
 import { createRouterEvent } from "../utils/createRouterEvent";
 import { reportTracker } from "./reportTracker";
-import { setUserId } from "./setUserId";
 import { jsError, promiseError, resourceError } from "./errorReport";
 import xcCollection from "./performance";
 import { validPageStayTime } from "../constants/index";
@@ -100,4 +99,4 @@ class Monitor {
 
 _window.Monitor = Monitor;
 export default Monitor;
-export { reportTracker, setUserId };
+export { reportTracker };
